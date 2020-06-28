@@ -35,13 +35,14 @@ document.getElementById("timer").innerHTML="1:00";
 var questions = [
   {
     question: "Who invented JavaScript?",
-    answers: {
-      a: "Douglas Crockford",
-      b: "Sheryl Sandberg",
-      c: "Brendan Eich"
-    },
-    correctAnswer: "c"
-  },]
+    // answers: [
+    //   a: "Douglas Crockford",
+    //   b: "Sheryl Sandberg",
+    //   c: "Brendan Eich",
+    // ]
+  }
+    // correctAnswer: "c"
+]
 //   {
 //     question: "Which one of these is a JavaScript package manager?",
 //     answers: {
@@ -78,7 +79,8 @@ var nextQuestion = function(){
 }
 
 var showQuestion = function(question) {
-  questionEl.innertext = question.question
+  questionEl.innerHTML = "<h2 class question>" + questions.question + "</h2>"
+  console.log(questions.question);
 }
 // var selectAnswer = function(){
 
