@@ -72,7 +72,24 @@ var nextQuestion = function (){
       console.log(q.answers.c);
       question.innerHTML = "<h2 id='question'>" + q.question + "</h2>";
       
-}
+      var aAnswerEl = document.createElement("button");
+      aAnswerEl.className = "btn";
+      aAnswerEl.style = "margin: 15px";
+      aAnswerEl.innerHTML = "<h3>" + q.answers.a +"</h3>";
+      questionContainerEl.appendChild(aAnswerEl);
+
+      var bAnswerEl = document.createElement("button");
+      bAnswerEl.className = "btn";
+      bAnswerEl.style = "margin: 15px";
+      bAnswerEl.innerHTML = "<h3>" + q.answers.b +"</h3>";
+      questionContainerEl.appendChild(bAnswerEl);
+
+      var cAnswerEl = document.createElement("button");
+      cAnswerEl.className = "btn";
+      cAnswerEl.style = "margin: 15px";
+      cAnswerEl.innerHTML = "<h3>" + q.answers.c +"</h3>";
+      questionContainerEl.appendChild(cAnswerEl);
+    };
 
 // var showQuestion = function() {
 //   questionEl.innerText = questions.question;
