@@ -1,11 +1,9 @@
 //Opening page
-var startButton = document.getElementById("start-quiz");
-var questionContainerEl = document.getElementById("question-form");
-var welcome = document.getElementById("welcome");
-var currentQuestionIndex
-var questionEl = document.getElementById("question");
-var answerButtonEl = document.getElementById("answer-buttons");
 
+var startButton = document.querySelector("#start-quiz");
+var questionContainerEl = document.querySelector("#question-form");
+var welcome = document.querySelector("#welcome");
+var currentQuesitonIndex = 0;
 
 //timer
 var seconds=60;
@@ -33,59 +31,56 @@ document.getElementById("timer").innerHTML="1:00";
 // array of questions
 
 var questions = [
-  {
-    question: "Who invented JavaScript?",
-    // answers: [
-    //   a: "Douglas Crockford",
-    //   b: "Sheryl Sandberg",
-    //   c: "Brendan Eich",
-    // ]
-  }
-    // correctAnswer: "c"
-]
-//   {
-//     question: "Which one of these is a JavaScript package manager?",
-//     answers: {
-//       a: "Node.js",
-//       b: "TypeScript",
-//       c: "npm"
-//     },
-//     correctAnswer: "c"
-//   },
-//   {
-//     question: "Which tool can you use to ensure code quality?",
-//     answers: {
-//       a: "Angular",
-//       b: "jQuery",
-//       c: "RequireJS",
-//       d: "ESLint"
-//     },
-//     correctAnswer: "d"
-//   }
-//     ];
-
+    {
+      question: "Who invented JavaScript?",
+      answers: {
+        a: "Douglas Crockford",
+        b: "Sheryl Sandberg",
+        c: "Brendan Eich"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "Which one of these is a JavaScript package manager?",
+      answers: {
+        a: "Node.js",
+        b: "TypeScript",
+        c: "npm"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "Which tool can you use to ensure code quality?",
+      answers: {
+        a: "Angular",
+        b: "jQuery",
+        c: "ESLint"
+      },
+      correctAnswer: "c"
+    }
+];
 var startQuiz = function (){
-  console.log("started");
   startButton.classList.add("hide");
   welcome.classList.add("hide");
   questionContainerEl.classList.remove("hide");
-  currentQuestionIndex = 0
 
   nextQuestion();
 }
 
-var nextQuestion = function(){
-    showQuestion(currentQuestionIndex)
+var nextQuestion = function (){
+      var q = questions[currentQuesitonIndex];
+      console.log(q.answers.c);
+      question.innerHTML = "<h2 id='question'>" + q.question + "</h2>";
+      
 }
 
-var showQuestion = function(question) {
-  questionEl.innerHTML = "<h2 class question>" + questions.question + "</h2>"
-  console.log(questions.question);
-}
+// var showQuestion = function() {
+//   questionEl.innerText = questions.question;
+//         console.log(questions.question);
+// }
 // var selectAnswer = function(){
 
 // }
-//Click Start and generate next question
 
 
 //each question has four buttons for answer and a new question
