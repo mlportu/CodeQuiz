@@ -11,17 +11,25 @@
         <a href="./highscore.html">View High Score</a>
         <div id = "timer"></div>
     </header>
-    <main>
-        <div class="question-form">
-            <h1 class="question" id="question">Coding Quiz Challenge</h1>
+    <body>
+        <div class="welcome" id="welcome">
+            <h1>Coding Quiz Challenge</h1>
             <p>Try to answer the following code-related questions within the time limit.
             </br>
                 Keep in mind that incorrect answers will penalize your score/time by ten seconds!
             </p>
-            <button class="btn" id="start-quiz">Start Quiz</button>
+            <button id="start-quiz">Start Quiz</button>
         </div>
-        
-    </main>
+        <div class="hide" id= "question-form">
+            <div id="question">Question</div>
+            <div id="answer-buttons" class="btn">
+                <button class="btn" id="start-quiz"></button>
+                <button class="btn" id="start-quiz"></button>
+                <button class="btn" id="start-quiz"></button>
+                <button class="btn" id="start-quiz"></button>
+            </div>
+        </div>
+    </body>
     <script src="./assets/java/style.js"></script>
 </body>
 </html>

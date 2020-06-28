@@ -12,3 +12,12 @@ header a{
     text-decoration: none;
     color:blue
 }
+h1{
+    text-align: center;
+}
+div{
+    text-align: center;
+}
+.hide{
+    display:none;
+}
