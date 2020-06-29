@@ -12,6 +12,8 @@ var cAnswerEl = document.querySelector("#button-c");
 var responseMatchEl = document.querySelector("#answer");
 var scoreEl = document.querySelector("#score");
 var userScoreEl = document.querySelector("#user-score");
+var scoreSubmitEl = document.querySelector("#submit-score");
+
 
 //timer
 var seconds=59;
@@ -67,6 +69,7 @@ var questions = [
       correctAnswer: "c"
     }
 ];
+
 var startQuiz = function (){
   startButton.classList.add("hide");
   welcome.classList.add("hide");
@@ -94,7 +97,7 @@ var renderQuestion = function (){
    
     }
   else{
-    logScore();
+    userScore();
   }
 }
 
@@ -124,16 +127,33 @@ var nextQuestion = function() {
       }
   }
 
-var logScore = function() {
+var userScore = function() {
+  var userInitials = document.querySelector("input[name='user-initials']").value;
+  var uScore = {
+      initials: userInitials,
+      score: seconds,
+  }
   questionContainerEl.classList.add("hide");;
   scoreEl.classList.remove("hide");
-  userScoreEl.innerHTML = "<p> Your Score:" + seconds + "</p>";
-    //scoreEl.innerHTML = "<p> Score:" + seconds + "</p>";
-  
+  userScoreEl.innerHTML = "<p> Your Score:" + uScore.score + "</p>";
+  clearInterval(timer);
 }
+
+var logScore = function() { 
+  var userInitials = document.querySelector("input[name='user-initials']").value;
+  var uScore = {
+      initials: userInitials,
+      score: seconds,
+  }
+      console.log(uScore.initials);
+      console.log(uScore.score);
+      localStorage.setItem("score", JSON.stringify(uScore))
+}
+
 //once no more question OR no more time = "all done" show score or time and create field to enter initials button to submit
 
 startButton.addEventListener("click", startQuiz);
 aAnswerEl.addEventListener("click", selectAnswer);
 bAnswerEl.addEventListener("click", selectAnswer);
 cAnswerEl.addEventListener("click", selectAnswer);
+scoreSubmitEl.addEventListener("click", logScore);
