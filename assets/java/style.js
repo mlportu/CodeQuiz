@@ -5,6 +5,7 @@ var questionContainerEl = document.querySelector("#question-form");
 var welcome = document.querySelector("#welcome");
 var currentQuesitonIndex = 0;
 
+
 //timer
 var seconds=60;
 var timer;
@@ -62,9 +63,9 @@ var startQuiz = function (){
   startButton.classList.add("hide");
   welcome.classList.add("hide");
   questionContainerEl.classList.remove("hide");
-  
+
   renderQuestion();
- }
+ };
 
 var renderQuestion = function (){
       var q = questions[currentQuesitonIndex];
@@ -72,31 +73,35 @@ var renderQuestion = function (){
       
       var aAnswerEl = document.createElement("button");
       aAnswerEl.className = "btn";
+      aAnswerEl.setAttribute("value", "a")
       aAnswerEl.style = "margin: 15px";
       aAnswerEl.innerHTML = "<h3 id=answer>" + q.answers.a +"</h3>";
       questionContainerEl.appendChild(aAnswerEl);
+      aAnswerEl.addEventListener("click", selectAnswer);
 
       var bAnswerEl = document.createElement("button");
       bAnswerEl.className = "btn";
+      bAnswerEl.setAttribute("value", "b")
       bAnswerEl.style = "margin: 15px";
       bAnswerEl.innerHTML = "<h3 id=answer>" + q.answers.b +"</h3>";
       questionContainerEl.appendChild(bAnswerEl);
+      bAnswerEl.addEventListener("click", selectAnswer);
 
       var cAnswerEl = document.createElement("button");
       cAnswerEl.className = "btn";
+      aAnswerEl.setAttribute("value", "c")
       cAnswerEl.style = "margin: 15px";
       cAnswerEl.innerHTML = "<h3 id=answer>" + q.answers.c +"</h3>";
       questionContainerEl.appendChild(cAnswerEl);
+      cAnswerEl.addEventListener("click", selectAnswer);
     }
 
-    // for(var i=0; i<questions.length; i++){  
-      
-    // } ;
-
 var selectAnswer = function (){
-    console.log(questions.correctAnswer);
-      
-  }
+    var q = questions[currentQuesitonIndex];
+    console.log(q.correctAnswer);
+    
+};
+
 
 //     currentQuestionIndex ++
 //     nextQuestion();
