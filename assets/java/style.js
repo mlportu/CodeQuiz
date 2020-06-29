@@ -29,32 +29,31 @@ document.getElementById("start-quiz").onclick = function() {
 document.getElementById("timer").innerHTML="1:00"; 
 
 // array of questions
-
 var questions = [
     {
-      question: "Who invented JavaScript?",
+      question: "Question1",
       answers: {
-        a: "Douglas Crockford",
-        b: "Sheryl Sandberg",
-        c: "Brendan Eich"
+        a: "Answer 1",
+        b: "Answer 2",
+        c: "Answer 3"
       },
       correctAnswer: "c"
     },
     {
-      question: "Which one of these is a JavaScript package manager?",
+      question: "Question2",
       answers: {
-        a: "Node.js",
-        b: "TypeScript",
-        c: "npm"
+        a: "Answer 1",
+        b: "Answer 2",
+        c: "Answer 3"
       },
       correctAnswer: "c"
     },
     {
-      question: "Which tool can you use to ensure code quality?",
+      question: "Question3",
       answers: {
-        a: "Angular",
-        b: "jQuery",
-        c: "ESLint"
+        a: "Answer 1",
+        b: "Answer 2",
+        c: "Answer 3"
       },
       correctAnswer: "c"
     }
@@ -63,45 +62,50 @@ var startQuiz = function (){
   startButton.classList.add("hide");
   welcome.classList.add("hide");
   questionContainerEl.classList.remove("hide");
+  
+  renderQuestion();
+ }
 
-  nextQuestion();
-}
-
-var nextQuestion = function (){
+var renderQuestion = function (){
       var q = questions[currentQuesitonIndex];
-      console.log(q.answers.c);
       question.innerHTML = "<h2 id='question'>" + q.question + "</h2>";
       
       var aAnswerEl = document.createElement("button");
       aAnswerEl.className = "btn";
       aAnswerEl.style = "margin: 15px";
-      aAnswerEl.innerHTML = "<h3>" + q.answers.a +"</h3>";
+      aAnswerEl.innerHTML = "<h3 id=answer>" + q.answers.a +"</h3>";
       questionContainerEl.appendChild(aAnswerEl);
 
       var bAnswerEl = document.createElement("button");
       bAnswerEl.className = "btn";
       bAnswerEl.style = "margin: 15px";
-      bAnswerEl.innerHTML = "<h3>" + q.answers.b +"</h3>";
+      bAnswerEl.innerHTML = "<h3 id=answer>" + q.answers.b +"</h3>";
       questionContainerEl.appendChild(bAnswerEl);
 
       var cAnswerEl = document.createElement("button");
       cAnswerEl.className = "btn";
       cAnswerEl.style = "margin: 15px";
-      cAnswerEl.innerHTML = "<h3>" + q.answers.c +"</h3>";
+      cAnswerEl.innerHTML = "<h3 id=answer>" + q.answers.c +"</h3>";
       questionContainerEl.appendChild(cAnswerEl);
-    };
+    }
+
+    // for(var i=0; i<questions.length; i++){  
+      
+    // } ;
+
+var selectAnswer = function (){
+    console.log(questions.correctAnswer);
+      
+  }
+
+//     currentQuestionIndex ++
+//     nextQuestion();
+// }
 
 // var showQuestion = function() {
-//   questionEl.innerText = questions.question;
-//         console.log(questions.question);
-// }
+// if (currentQuestionIndex > questions.length){
+
 // var selectAnswer = function(){
-
-// }
-
-
-//each question has four buttons for answer and a new question
-    //create variable for quizfield
 
 //Click response and generate next question
 
