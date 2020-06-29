@@ -8,6 +8,7 @@ var questionEl = document.querySelector("#question");
 var aAnswerEl = document.querySelector("#button-a")
 var bAnswerEl = document.querySelector("#button-b");
 var cAnswerEl = document.querySelector("#button-c");
+var answerEl = document.querySelector("#answer");
 
 //timer
 var seconds=59;
@@ -95,11 +96,14 @@ var renderQuestion = function (){
 
 var selectAnswer = function (){
     var q = questions[currentQuesitonIndex];
+    answerEl.classList.remove("hide");
     if(this.value === q.correctAnswer){
       console.log("Correct") 
+      answerEl.innerHTML="<p>Correct!</p>"
     }
     else{
       console.log("Wrong");
+      answerEl.innerHTML="<p>Wrong...</p>"
       seconds -=10;
     }
 
