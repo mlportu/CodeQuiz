@@ -108,20 +108,9 @@ var selectAnswer = function (){
     }
 
 var nextQuestion = function() {
-      window.confirm("Next Question?");
       currentQuesitonIndex ++;
       renderQuestion()
   }
-//     currentQuestionIndex ++
-//     nextQuestion();
-// }
-
-// var showQuestion = function() {
-// if (currentQuestionIndex > questions.length){
-
-// var selectAnswer = function(){
-
-//Click response and generate next question
 
 //once no more question OR no more time = "all done" show score or time and create field to enter initials button to submit
 
