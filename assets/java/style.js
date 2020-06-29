@@ -145,12 +145,15 @@ var logScore = function() {
       initials: userInitials,
       score: seconds,
   }
-      console.log(uScore.initials);
-      console.log(uScore.score);
-      localStorage.setItem("score", JSON.stringify(uScore))
-}
+      localStorage.setItem("score", JSON.stringify(uScore));
 
-//once no more question OR no more time = "all done" show score or time and create field to enter initials button to submit
+      viewHighScore();
+}
+  var viewHighScore = function() {
+    window.location.href="./highscore.html";
+  }
+
+ 
 
 startButton.addEventListener("click", startQuiz);
 aAnswerEl.addEventListener("click", selectAnswer);
