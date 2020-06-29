@@ -73,9 +73,9 @@ var renderQuestion = function (){
       
       var aAnswerEl = document.createElement("button");
       aAnswerEl.className = "btn";
-      aAnswerEl.setAttribute("value", "a")
       aAnswerEl.style = "margin: 15px";
       aAnswerEl.innerHTML = "<h3 id=answer>" + q.answers.a +"</h3>";
+      aAnswerEl.setAttribute("value", "a")
       questionContainerEl.appendChild(aAnswerEl);
       aAnswerEl.addEventListener("click", selectAnswer);
 
@@ -89,7 +89,7 @@ var renderQuestion = function (){
 
       var cAnswerEl = document.createElement("button");
       cAnswerEl.className = "btn";
-      aAnswerEl.setAttribute("value", "c")
+      cAnswerEl.setAttribute("value", "c")
       cAnswerEl.style = "margin: 15px";
       cAnswerEl.innerHTML = "<h3 id=answer>" + q.answers.c +"</h3>";
       questionContainerEl.appendChild(cAnswerEl);
@@ -98,7 +98,13 @@ var renderQuestion = function (){
 
 var selectAnswer = function (){
     var q = questions[currentQuesitonIndex];
-    console.log(q.correctAnswer);
+    if(this.value === q.correctAnswer){
+      alert("correct")
+    }
+    else{
+      alert("wrong");
+      seconds -10;
+    }
     
 };
 
