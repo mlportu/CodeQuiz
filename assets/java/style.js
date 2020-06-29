@@ -79,15 +79,14 @@ var renderQuestion = function (){
       
       aAnswerEl.innerHTML = "<h3 id = 'button-a'>" + q.answers.a +"</h3>";
       aAnswerEl.setAttribute("value", "a")
-      console.log(q.answers.a)
 
       bAnswerEl.innerHTML = "<h3 id=answer>" + q.answers.b +"</h3>";
       bAnswerEl.setAttribute("value", "b");
-      bAnswerEl.addEventListener("click", selectAnswer);
+    
 
       cAnswerEl.innerHTML = "<h3 id=answer>" + q.answers.c +"</h3>";
       cAnswerEl.setAttribute("value", "c");
-      cAnswerEl.addEventListener("click", selectAnswer);
+   
     }
   else{
     window.alert("Quiz Complete!");
@@ -116,3 +115,5 @@ var nextQuestion = function() {
 
 startButton.addEventListener("click", startQuiz);
 aAnswerEl.addEventListener("click", selectAnswer);
+bAnswerEl.addEventListener("click", selectAnswer);
+cAnswerEl.addEventListener("click", selectAnswer);
