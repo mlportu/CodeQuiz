@@ -10,7 +10,7 @@ var bAnswerEl = document.querySelector("#button-b");
 var cAnswerEl = document.querySelector("#button-c");
 
 //timer
-var seconds=60;
+var seconds=59;
 var timer;
 function timerFunction() {
   if(seconds < 60) { // I want it to say 1:00, not 60
@@ -100,7 +100,7 @@ var selectAnswer = function (){
     }
     else{
       console.log("Wrong");
-      seconds -10;
+      seconds -=10;
     }
 
     nextQuestion();
