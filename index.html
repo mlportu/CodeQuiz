@@ -22,11 +22,18 @@
         </div>
         <div class="hide" id= "question-form">
             <div id="question"></div>
-                <button class = "btn" id="button-a"></button>
-                <button class = "btn" id="button-b"></button>
-                <button class = "btn" id="button-c"></button>
+                <div id="buttons"></div>
+                    <button class = "btn" id="button-a"></button>
+                    <button class = "btn" id="button-b"></button>
+                    <button class = "btn" id="button-c"></button>
+                <div class = "hide" id= "answer"> </div>
+        </div>
+        <div class = "hide" id= "score"> 
+                <h1>Quiz Complete!</h1>
+                <p id=user-score></p>
+                <input type = "text" placeholder="Your Initials" id = "initials"/>
+                <button class = "btn" id = "submit-score">Submit Score</button>
             </div>
-            <div class = "hide" id= "answer"> </div>
         </div>
     </body> 
     <script src="./assets/java/style.js"></script>

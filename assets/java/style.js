@@ -5,10 +5,13 @@ var questionContainerEl = document.querySelector("#question-form");
 var welcome = document.querySelector("#welcome");
 var currentQuesitonIndex = 0;
 var questionEl = document.querySelector("#question");
+var buttonsEl = document.querySelector("#buttons")
 var aAnswerEl = document.querySelector("#button-a")
 var bAnswerEl = document.querySelector("#button-b");
 var cAnswerEl = document.querySelector("#button-c");
-var answerEl = document.querySelector("#answer");
+var responseMatchEl = document.querySelector("#answer");
+var scoreEl = document.querySelector("#score");
+var userScoreEl = document.querySelector("#user-score");
 
 //timer
 var seconds=59;
@@ -22,6 +25,7 @@ function timerFunction() {
   } else {
      clearInterval(timer);
      alert("Quiz Over");
+     logScore();
   }
 }
 document.getElementById("start-quiz").onclick = function() {
@@ -90,20 +94,20 @@ var renderQuestion = function (){
    
     }
   else{
-    window.alert("Quiz Complete!");
+    logScore();
   }
 }
 
 var selectAnswer = function (){
     var q = questions[currentQuesitonIndex];
-    answerEl.classList.remove("hide");
+    responseMatchEl.classList.remove("hide");
     if(this.value === q.correctAnswer){
       console.log("Correct") 
-      answerEl.innerHTML="<p>Correct!</p>"
+      responseMatchEl.innerHTML="<p>Correct!</p>"
     }
     else{
       console.log("Wrong");
-      answerEl.innerHTML="<p>Wrong...</p>"
+      responseMatchEl.innerHTML="<p>Wrong...</p>"
       seconds -=10;
     }
 
@@ -111,10 +115,22 @@ var selectAnswer = function (){
     }
 
 var nextQuestion = function() {
+  if (currentQuesitonIndex < questions.length) {    
       currentQuesitonIndex ++;
       renderQuestion()
+  }    else{
+        window.alert("Quiz Complete!");
+        
+      }
   }
 
+var logScore = function() {
+  questionContainerEl.classList.add("hide");;
+  scoreEl.classList.remove("hide");
+  userScoreEl.innerHTML = "<p> Your Score:" + seconds + "</p>";
+    //scoreEl.innerHTML = "<p> Score:" + seconds + "</p>";
+  
+}
 //once no more question OR no more time = "all done" show score or time and create field to enter initials button to submit
 
 startButton.addEventListener("click", startQuiz);
