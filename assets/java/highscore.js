@@ -1,15 +1,17 @@
-var loadTasks = function (){
-    // retrieve tasks from local storage
-   var savedScores = localStorage.getItem("score");
 
-    if(savedScores === null){
+
+var loadScores = function () {
+    // retrieve tasks from local storage
+    var savedTasks = localStorage.getItem("tasks");
+
+    if(savedTasks === null){
         return false;
     }
 
-    savedScores=JSON.parse(savedScores);
+    savedTasks=JSON.parse(savedTasks);
 
-    for(var i=0; i<savedScores.length; i++){
+    for(var i=0; i<savedTasks.length; i++){
         
-        console.log(savedScores)
-    }
-} 
+        createTaskEl(savedTasks[i]);
+    }  
+}

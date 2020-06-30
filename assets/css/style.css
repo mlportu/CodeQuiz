@@ -1,6 +1,7 @@
 :root{
     --primary-color: navy;
     --secondary-color: white;
+    --tertiary-color: rgb(67, 122, 181);
 }
 body{
     font-family: Arial, Helvetica, sans-serif;
@@ -29,4 +30,7 @@ div{
 .btn{
     background-color: var(--primary-color);
     color: var(--secondary-color)
+}
+.btn:hover{
+    background-color: var(--tertiary-color)
 }
